@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+}
+
+#logo {
+    height: 100px;
+    width: 500px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    list-style-type: none;
+}
+
+.nav {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.nav a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.nav:nth-child(1) {
+    background-color: gray;
+}
+
+.nav:hover {
+    background-color:#BDBDBD;
+}
+
+#Detail {
+    color: white;
+    padding: 10px;
+    background-color: #BDBDBD;
+    width: 20%;
+    height: 100%;
+}

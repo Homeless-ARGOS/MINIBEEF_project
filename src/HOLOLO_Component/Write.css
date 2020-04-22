@@ -1,0 +1,28 @@
+#WriteForm{
+    text-align: center;
+}
+
+table{
+    margin-right: auto;
+    margin-left: auto;
+    border : 3px solid black;   
+    padding : 30px 50px 30px 50px
+}
+
+td{
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+
+#ContentForm{
+    height: 400px;
+    width: 300px;
+}
+
+#DoneB{
+    margin-top: 30px;
+    text-align: center;
+    border: solid 3px blue;
+    
+}
