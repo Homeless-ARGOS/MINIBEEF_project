@@ -6,6 +6,8 @@ import './App.css';
 import Navi from './ire0546_Component/NavigationBar'
 import Arti from './MINIBEEF_Component/ArticleList'
 import Write from './HOLOLO_Component/Write'
+import About from './MINIBEEF_Component/About'
+import Login from './MINIBEEF_Component/LoginBox'
 
 class App extends Component {
   constructor(props) {
@@ -48,15 +50,17 @@ class App extends Component {
         )
     }
 
+    var navigation = (<Navi onCategoryClick={function(target) { this.setState({mode:target}); }.bind(this)}></Navi>);
+    
     /* 현재 모드에 따라 컴포넌트를 생성함 */
     if(this.state.mode === 'welcome') {
-      display.push(<Navi></Navi>);
+      display.push(navigation);
       display.push(<Arti articles={articles}></Arti>);
       display.push(<button onClick={function() {
         this.setState({mode:'write'});
       }.bind(this)}>글쓰기</button>); // 버튼을 눌렀을 때 모드를 바꿔야하므로 컴포넌트 내부가 아닌 App.js에 생성
     } else if(this.state.mode === 'write') {
-      display.push(<Navi></Navi>);
+      display.push(navigation);
       display.push(<Write onChangePage={function(_title, _author, _date) {
         this.max_content_id = this.max_content_id + 1;
 
@@ -69,11 +73,20 @@ class App extends Component {
         /* Write 컴포넌트 내부에서 제출 버튼을 눌렀을 때 모드를 변경 */
         this.setState({mode:'welcome'});
       }.bind(this)}></Write>)
+    } else if(this.state.mode === 'about') {
+      display.push(navigation);
+      display.push(<About></About>)
+    } else if(this.state.mode === 'login') {
+      {/* 로그인 페이지 */}
+      display.push(navigation);
+      display.push(<Login></Login>);
     }
 
     return (
       <div className="App">
-        {display}
+        
+          {display}
+        
       </div>
     );
   }
