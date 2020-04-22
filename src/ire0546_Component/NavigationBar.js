@@ -11,10 +11,15 @@ class NavigationBar extends Component {
 
                 <nav>
                     <ul class="container">
-                        <li class="nav"><a href="">See Kategorie</a></li>
-                        <li class="nav"><a href="">Login</a></li>
-                        <li class="nav"><a href="">About</a></li>
-                        <li class="nav"><a href="">Notice Board</a></li>
+                        <li class="nav"><a onClick={function() {
+                            this.props.onCategoryClick('welcome')
+                        }.bind(this)}>Home</a></li>
+                        <li class="nav"><a onClick={function() {
+                            this.props.onCategoryClick('login')
+                        }.bind(this)}>Login</a></li>
+                        <li class="nav"><a onClick={function() {
+                            this.props.onCategoryClick('about');
+                        }.bind(this)}>About</a></li>
                     </ul>
                 </nav>
         </div>
